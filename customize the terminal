@@ -1,0 +1,51 @@
+# .bashrc
+
+# Written by azharullah
+
+# In the terminal type-- gedit ~/.bashrc
+# Copy the entire text from line  to the end
+# Replace with the existing contents of the file and save it
+# In settings, add the terminal to your automatic startup programs
+# Whenever you start the terminal, the following text will appear 
+
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+	echo "********************************************************************************"
+	echo "********************************************************************************"
+	echo ""	
+	echo "                         W E L C O M E   A Z H A R                        " # or your name with any pattern of your choice
+	echo ""	
+	echo "********************************************************************************"
+	echo "********************************************************************************"
+	echo "Use built-in program or do something else [y/n]"
+	read choice
+	if [ "$choice" == "y" ]; then 
+		echo "Study or coding or entertainment or search for something [s/c/e/x]" 
+		read option1 ;
+		if [ "$option1" == "s" ]; then
+    	    	subl ;
+    	    	firefox "www.eduserver.cse.nitc.ac.in" ; # any website of your choice
+		elif [ "$option1" == "c" ]; then
+			subl ;
+   	    	firefox "www.hackerrank.com" "www.codechef.com"; # any website of your choice
+		elif [ "$option1" == "e" ]; then	
+			subl ;
+			firefox "www.facebook.com" "www.youtube.com" "www.gmail.com" ; # any website of your choice
+		elif [ "$option1" == "x" ]; then
+			echo "Enter the site name"
+			read search ;
+			firefox "$search" ;
+		else 	
+			echo "It's Ok..!!!";
+		fi
+	elif [ "$choice" == "n" ]; then
+		echo "Please carry on...!!" ;
+	fi
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
