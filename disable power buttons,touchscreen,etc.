@@ -1,0 +1,8 @@
+xinput --list
+ # It shows a list of all available input devices with an id no. for each device
+
+xinput set-prop "Prop no." 'Device Enabled' 0
+
+# Replace "Prop no." with corresponding id number
+# This command will turn off the corresponding device 
+# Replace the 0 in the end with 1 to again turn it on 
