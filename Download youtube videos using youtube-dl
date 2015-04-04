@@ -1,0 +1,24 @@
+ping -c1 "www.google.com" 2>&1 > /dev/null
+if [ $? -ne 0 ]; then
+		# there should be a working internet connection
+		echo "error : Please run the script with a working network connection!!!"
+else
+	if youtube-dl --version >/dev/null 2>&1; then
+    	echo "Enter the video URL"
+    	read url
+    	echo "*** Downloading the video ***"
+    	youtube-dl $url
+    else	
+    	echo "Downloading and installing youtube-dl"
+    	sudo apt-get install youtube-dl
+    	if youtube-dl --version >/dev/null 2>&1; then
+    		echo "Enter the video URL"
+    		read url
+    		echo "*** Downloading the video ***"
+    		youtube-dl $url
+		else 
+			echo "error : unable to download and install youtube-dl"
+			echo "error : Try running the script again"
+		fi
+	fi
+fi
